@@ -17,13 +17,8 @@ contract AddressContract {
 
     }
 
-    modifier onlyRelay() {
-        require(msg.sender == relay, "Airdrop Supply is paused");
-        _;
-    }
-
     modifier onlyACM() {
-        require(msg.sender == acManager, "Airdrop Supply is paused");
+        require(msg.sender == acManager, "Unauthorized access:Only Address Manager Can Call");
         _;
     }
 
