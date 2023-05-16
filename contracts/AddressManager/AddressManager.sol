@@ -17,11 +17,10 @@ contract AddressManager is ERC721 {
     constructor(address _relay, IPool _pool,string memory name_, string memory symbol_)ERC721(name_,symbol_){
         relay = _relay;
         aavePool = _pool;
-
     }
 
     modifier onlyRelay() {
-        require(msg.sender == relay, "Airdrop Supply is paused");
+        require(msg.sender == relay, "Unauthorized access:Only Relay Can Call");
         _;
     }
 
@@ -65,8 +64,6 @@ contract AddressManager is ERC721 {
         if (totalCollateral == 0) {
             AddressContract(ac).destroy(payable(relay));
         }
-        // burn nft??
-
     }
 
     function repay(uint _id, address _token, uint256 _amount, uint256 _rateMode) external onlyRelay {
