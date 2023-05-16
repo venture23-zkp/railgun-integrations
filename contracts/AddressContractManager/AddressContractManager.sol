@@ -7,7 +7,7 @@ import {AddressContract} from "../AddressContract/AddressContract.sol";
 import {IPool} from "../interfaces/IPool.sol";
 
 
-contract AddressManager is ERC721 {
+contract AddressContractManager is ERC721 {
     address public relay;
     IPool  public aavePool;
 

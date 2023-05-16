@@ -20,7 +20,7 @@ describe("Address Contract Manager", function () {
     const relay = relayAcc.address;
     const pool = poolAcc.address;
 
-    const ACM = await ethers.getContractFactory("AddressManager");
+    const ACM = await ethers.getContractFactory("AddressContractManager");
     const acm = await ACM.deploy(relay, pool, name, symbol);
     const acmAddress = acm.address;
     console.log(relay, pool)

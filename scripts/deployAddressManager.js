@@ -11,7 +11,7 @@ const name = "RailGunAave";
 const symbol ="RAV"
 
 async function main() {
-  const ACM = await hre.ethers.getContractFactory("AddressManager");
+  const ACM = await hre.ethers.getContractFactory("AddressContractManager");
   const acm = await ACM.deploy(relay,pool,name,symbol);
 
   await acm.deployed();
